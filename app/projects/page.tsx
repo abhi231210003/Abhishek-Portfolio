@@ -6,34 +6,35 @@ import { projectsData } from '@/constant/projects'
 import { FiGithub } from 'react-icons/fi'
 import { FiExternalLink } from 'react-icons/fi'
 
-const Projects = () => {
-    // Display only first 3 projects on home page
-    const displayedProjects = projectsData.slice(0, 3)
-
+export default function ProjectsPage() {
     return (
-        <section id="projects" className='pt-16 pb-16 text-white'>
+        <section className='min-h-screen pt-32 pb-16 text-white'>
             <div className="mx-auto w-full max-w-7xl px-6">
-                <div data-aos="fade-down" className="mb-6 sm:mb-8 text-center">
-                    <p className="text-sm tracking-widest text-cyan-200 uppercase mb-2">WHAT I'VE BUILT</p>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white">Featured <span className='text-cyan-300'>Projects</span></h1>
+                <div data-aos="fade-down" className="mb-12 text-center">
+                    <p className="text-sm tracking-widest text-cyan-200 uppercase mb-2">PORTFOLIO</p>
+                    <h1 className="text-5xl md:text-6xl font-bold text-white">All <span className='text-cyan-300'>Projects</span></h1>
+                    <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
+                        Explore my complete collection of projects showcasing my expertise in full-stack development, AI/ML, and modern web technologies.
+                    </p>
                 </div>
 
                 <div className="mt-16 space-y-10">
-                    {displayedProjects.map((project, idx) => (
+                    {projectsData.map((project, idx) => (
                         <div key={project.id} data-aos="fade-up" data-aos-delay={idx * 100} className="rounded-2xl border border-white/10 bg-[#0b1220]/60 overflow-hidden hover:border-white/20 transition-all">
-                            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 p-6 items-center">
-                                <div className="lg:col-span-2 rounded-xl overflow-hidden">
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        width={600}
-                                        height={400}
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
+                                {/* Image */}
+                                <div className="rounded-xl overflow-hidden">
+                                    <Image 
+                                        src={project.image} 
+                                        alt={project.title} 
+                                        width={600} 
+                                        height={400} 
                                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
 
                                 {/* Content */}
-                                <div className="lg:col-span-3 flex flex-col justify-between">
+                                <div className="flex flex-col justify-between">
                                     <div>
                                         <div className="flex items-center gap-3 mb-3">
                                             <div className="p-2 rounded-lg bg-cyan-400/20">
@@ -72,7 +73,7 @@ const Projects = () => {
 
                                     {/* Links */}
                                     <div className="flex gap-3">
-                                        <Link
+                                        <Link 
                                             href={project.githubLink}
                                             target="_blank"
                                             className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all"
@@ -81,7 +82,7 @@ const Projects = () => {
                                             GitHub
                                         </Link>
                                         {project.liveLink && (
-                                            <Link
+                                            <Link 
                                                 href={project.liveLink}
                                                 target="_blank"
                                                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-400 text-slate-950 font-semibold hover:bg-cyan-300 transition-all"
@@ -97,18 +98,16 @@ const Projects = () => {
                     ))}
                 </div>
 
-                {/* Show More Button */}
-                <div data-aos="fade-up" className="flex justify-center mt-12">
-                    <Link
-                        href="/projects"
-                        className="px-8 py-3 rounded-lg bg-cyan-400 text-slate-950 font-semibold hover:bg-cyan-300 transition-all hover:shadow-lg hover:shadow-cyan-400/50"
+                {/* Back to Home */}
+                <div className="flex justify-center mt-12">
+                    <Link 
+                        href="/"
+                        className="px-8 py-3 rounded-lg border border-cyan-400/50 text-cyan-200 font-semibold hover:bg-cyan-400/10 hover:border-cyan-400 transition-all"
                     >
-                        View All Projects
+                        Back to Home
                     </Link>
                 </div>
             </div>
         </section>
     )
 }
-
-export default Projects

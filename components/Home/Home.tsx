@@ -1,13 +1,14 @@
 "use client"
 import React, { useEffect } from 'react'
 import Hero from './Hero/Hero'
-import Services from './Services/Services'
 import Resume from './Resume/Resume'
 import Projects from './Projects/Projects'
 import Skills from './Skills/Skills'
 import Contact from './Contact/Contact'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import About from './About/About'
+import Achievements from './Achievements/Achievements'
 
 // animation on scroll :aos
 const Home = () => {
@@ -26,10 +27,11 @@ const Home = () => {
   return (
     <div className='overflow-hidden'>
       <Hero />
+      <About />
       <Skills />
       <Projects />
-      <Services />
       <Resume />
+      <Achievements />
       <Contact />
     </div>
   )
