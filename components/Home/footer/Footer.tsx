@@ -15,18 +15,18 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-white/10 bg-[#0b0d24] text-white">
-      <div className="mx-auto w-full max-w-7xl px-6 py-10">
-        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-start">
+      <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+        <div className="grid gap-8 text-center md:grid-cols-[1.4fr_1fr] md:items-start md:text-left">
           <div>
-            <Link href="/#home" className="flex items-center gap-3">
+            <Link href="/#home" className="inline-flex items-center gap-3">
                     <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-cyan-300 text-[#071023] hover:scale-105">
                         <FaCode className="h-4 w-4" />
                     </span>
-                    <span className="hidden text-xl font-bold text-cyan-300 sm:block md:text-2xl">
+                    <span className="text-xl font-bold text-cyan-300 md:text-2xl">
                         Abhishek
                     </span>
                 </Link>
-            <p className="mt-4 max-w-md text-sm leading-6 text-slate-300">
+            <p className="mx-auto mt-4 max-w-md text-sm leading-6 text-slate-300 md:mx-0">
               Building thoughtful web experiences, AI-powered tools, and practical software with curiosity and care.
             </p>
           </div>
@@ -35,7 +35,7 @@ const Footer = () => {
             <h2 className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-200">
               Quick Links
             </h2>
-            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-3 md:max-w-sm md:justify-end">
+            <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-3 md:max-w-sm md:justify-end">
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}

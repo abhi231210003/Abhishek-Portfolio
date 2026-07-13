@@ -11,39 +11,39 @@ const Projects = () => {
     const displayedProjects = projectsData.slice(0, 3)
 
     return (
-        <section id="projects" className='pt-16 pb-16 text-white'>
-            <div className="mx-auto w-full max-w-7xl px-6">
+        <section id="projects" className='py-12 text-white md:py-16'>
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
                 <div data-aos="fade-down" className="mb-6 sm:mb-8 text-center">
-                    <p className="text-sm tracking-widest text-cyan-200 uppercase mb-2">WHAT I'VE BUILT</p>
-                    <h1 className="text-4xl md:text-5xl font-bold text-white">Featured <span className='text-cyan-300'>Projects</span></h1>
+                    <p className="text-sm tracking-widest text-cyan-200 uppercase mb-2">WHAT I&apos;VE BUILT</p>
+                    <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">Featured <span className='text-cyan-300'>Projects</span></h1>
                 </div>
 
-                <div className="mt-16 space-y-10">
+                <div className="mt-10 space-y-8 md:mt-16 md:space-y-10">
                     {displayedProjects.map((project, idx) => (
                         <div key={project.id} data-aos="fade-up" data-aos-delay={idx * 100} className="rounded-2xl border border-white/10 bg-[#0b1220]/60 overflow-hidden hover:border-white/20 transition-all">
-                            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 p-6 items-center">
-                                <div className="lg:col-span-2 rounded-xl overflow-hidden">
+                            <div className="grid grid-cols-1 items-center gap-5 p-4 sm:gap-6 sm:p-6 lg:grid-cols-5">
+                                <div className="aspect-[4/3] overflow-hidden rounded-xl lg:col-span-2">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
                                         width={600}
                                         height={400}
-                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                                     />
                                 </div>
 
                                 {/* Content */}
                                 <div className="lg:col-span-3 flex flex-col justify-between">
                                     <div>
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <div className="p-2 rounded-lg bg-cyan-400/20">
+                                        <div className="mb-3 flex items-start gap-3">
+                                            <div className="shrink-0 rounded-lg bg-cyan-400/20 p-2">
                                                 <svg className="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                                            <h3 className="text-lg font-semibold leading-6 text-white sm:text-xl">{project.title}</h3>
                                         </div>
-                                        <p className="text-slate-300 mb-4">{project.description}</p>
+                                        <p className="mb-4 text-sm leading-7 text-slate-300 sm:text-base">{project.description}</p>
 
                                         {/* Features */}
                                         <div className="mb-4">
@@ -71,11 +71,11 @@ const Projects = () => {
                                     </div>
 
                                     {/* Links */}
-                                    <div className="flex gap-3">
+                                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                                         <Link
                                             href={project.githubLink}
                                             target="_blank"
-                                            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 text-white hover:bg-white/10 hover:border-white/40 transition-all"
+                                            className="flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-white transition-all hover:border-white/40 hover:bg-white/10 sm:w-auto"
                                         >
                                             <FiGithub className="w-4 h-4" />
                                             GitHub
@@ -84,7 +84,7 @@ const Projects = () => {
                                             <Link
                                                 href={project.liveLink}
                                                 target="_blank"
-                                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-400 text-slate-950 font-semibold hover:bg-cyan-300 transition-all"
+                                                className="flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-4 py-2 font-semibold text-slate-950 transition-all hover:bg-cyan-300 sm:w-auto"
                                             >
                                                 <FiExternalLink className="w-4 h-4" />
                                                 Live Demo
@@ -98,10 +98,10 @@ const Projects = () => {
                 </div>
 
                 {/* Show More Button */}
-                <div data-aos="fade-up" className="flex justify-center mt-12">
+                <div data-aos="fade-up" className="mt-10 flex justify-center md:mt-12">
                     <Link
                         href="/projects"
-                        className="px-8 py-3 rounded-lg bg-cyan-400 text-slate-950 font-semibold hover:bg-cyan-300 transition-all hover:shadow-lg hover:shadow-cyan-400/50"
+                        className="w-full rounded-lg bg-cyan-400 px-8 py-3 text-center font-semibold text-slate-950 transition-all hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-400/50 sm:w-auto"
                     >
                         View All Projects
                     </Link>

@@ -45,6 +45,18 @@ export const achievementsData: Achievement[] = [
     description: 'Led website development and served as Student Coordinator for the 2nd IEEE International Conference on Computer Science & Digital Technologies (IC2SDT 2025) hosted at NIT Delhi.',
     links: [],
   },
+  {
+    id: 4,
+    image: '/images/logos/apnaclg.png',
+    title: 'Certificate of Completion - Alpha (DSA with Java)',
+    description: 'Successfully completed the Alpha (DSA with Java) course by Apna College, covering Data Structures and Algorithms in Java.',
+    links: [
+      {
+        name: 'View Certificate',
+        url: '/images/certificates/Java(DSA).pdf',
+      },
+    ],
+  },
   // {
   //   id: 2,
   //   image: '/images/naukri-logo.png',

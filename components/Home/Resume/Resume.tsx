@@ -36,11 +36,11 @@ const Resume = () => {
     ]
 
     return (
-        <section id='experience' className='pt-16 pb-16 text-white'>
-            <div className="mx-auto w-full max-w-7xl px-6">
+        <section id='experience' className='py-12 text-white md:py-16'>
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
                 {/* Header */}
-                <div data-aos="fade-down" className="mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white">Work <span className='text-cyan-300'>Experience</span></h1>
+                <div data-aos="fade-down" className="mb-8 text-center md:mb-12 ">
+                    <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">Work <span className='text-cyan-300'>Experience</span></h1>
                 </div>
 
                 {/* Experience Cards */}
@@ -52,21 +52,33 @@ const Resume = () => {
                             data-aos-delay={idx * 100}
                             className="group rounded-2xl border border-white/10 bg-[#0b1220]/60 overflow-hidden hover:border-white/20 transition-all"
                         >
-                            <div className="p-6 md:p-8">
+                            <div className="p-5 sm:p-6 md:p-8">
                                 {/* Header Row */}
-                                <div className="flex items-start justify-between gap-4 mb-4">
-                                    <div className="flex items-start gap-4 flex-1">
-                                        <div className="p-3 rounded-lg bg-cyan-400/20 border border-cyan-400/30 shrink-0">
-                                            <FaBriefcase className="w-6 h-6 text-cyan-300" />
+                                <div className="mb-4 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                                    <div className="flex flex-1 items-start gap-4">
+                                        <div className="shrink-0 rounded-lg border border-cyan-400/30 bg-cyan-400/20 p-2.5 sm:p-3">
+                                            <FaBriefcase className="h-5 w-5 text-cyan-300 sm:h-6 sm:w-6" />
                                         </div>
-                                        <div className="flex-1">
-                                            <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{exp.title}</h3>
-                                            <div className="flex flex-wrap gap-4 items-center text-sm text-slate-300">
+                                        <div className="min-w-0 flex-1">
+                                            <h3 className="mb-1 text-lg font-bold leading-7 text-white sm:text-xl md:text-2xl">{exp.title}</h3>
+                                            <div className="flex flex-col gap-2 text-sm text-slate-300 md:flex-row md:flex-wrap md:items-center md:gap-4">
                                                 <span className="font-semibold text-cyan-200">{exp.company}</span>
-                                                <span className="flex items-center gap-1">
-                                                    <FaMapMarkerAlt className="w-3 h-3" />
-                                                    {exp.location}
-                                                </span>
+                                                <div className="flex min-w-0 items-center justify-between gap-3">
+                                                    <span className="flex min-w-0 items-center gap-1">
+                                                        <FaMapMarkerAlt className="h-3 w-3 shrink-0" />
+                                                        <span className="truncate">{exp.location}</span>
+                                                    </span>
+                                                    {exp.certificateLink && (
+                                                        <Link
+                                                            href={exp.certificateLink}
+                                                            target="_blank"
+                                                            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-cyan-400/50 px-2.5 py-1 text-xs font-medium text-cyan-200 transition-all hover:border-cyan-400 hover:bg-cyan-400/10 md:hidden"
+                                                        >
+                                                            Certificate
+                                                            <FaExternalLinkAlt className="h-2.5 w-2.5" />
+                                                        </Link>
+                                                    )}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +86,7 @@ const Resume = () => {
                                         <Link
                                             href={exp.certificateLink}
                                             target="_blank"
-                                            className="px-4 py-2 rounded-lg border border-cyan-400/50 text-cyan-200 text-sm font-medium hover:bg-cyan-400/10 hover:border-cyan-400 transition-all flex items-center gap-2 shrink-0"
+                                            className="hidden w-full shrink-0 items-center justify-center gap-2 rounded-lg border border-cyan-400/50 px-4 py-2 text-sm font-medium text-cyan-200 transition-all hover:border-cyan-400 hover:bg-cyan-400/10 sm:w-fit md:flex"
                                         >
                                             Certificate
                                             <FaExternalLinkAlt className="w-3 h-3" />
@@ -92,9 +104,9 @@ const Resume = () => {
                                 <div className="mb-6">
                                     <ul className="space-y-2">
                                         {exp.description.map((point, pointIdx) => (
-                                            <li key={pointIdx} className="flex items-start gap-3 text-slate-300">
-                                                <span className="text-cyan-300 mt-1">›</span>
-                                                <span>{point}</span>
+                                            <li key={pointIdx} className="flex items-start gap-3 text-sm leading-7 text-slate-300 sm:text-base">
+                                                <span className="mt-1 text-cyan-300">&gt;</span>
+                                                <span className="min-w-0">{point}</span>
                                             </li>
                                         ))}
                                     </ul>

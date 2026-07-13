@@ -1,6 +1,5 @@
 "use client";
 import React from 'react'
-import Link from 'next/link'
 import {
     SiJavascript,
     SiTypescript,
@@ -10,22 +9,14 @@ import {
     SiNodedotjs,
     SiTailwindcss,
     SiMongodb,
-    SiDocker,
-    SiKubernetes,
-    SiGit,
-    SiGithub,
-    SiNpm,
-    SiPostman,
-    SiVercel,
     SiGooglegemini,
     SiFastapi,
     SiNumpy,
     SiPandas,
     SiScikitlearn,
 } from 'react-icons/si'
-import { VscVscode } from "react-icons/vsc";
 import { GiBrain } from 'react-icons/gi'
-import { FaDatabase, FaTools, FaCode, FaAws, FaLock, FaChartBar } from 'react-icons/fa'
+import { FaDatabase, FaTools, FaCode, FaLock, FaChartBar } from 'react-icons/fa'
 
 const categories = [
     {
@@ -95,19 +86,19 @@ const categories = [
 
 const Skills = () => {
     return (
-        <section id="skills" className="pt-16 pb-16 text-white">
-            <div className="mx-auto w-full max-w-7xl px-6">
-                <h2 data-aos="fade-right" className="text-4xl text-center md:text-5xl font-bold text-gray-100">Technical <span className="text-cyan-300">Expertise</span></h2>
+        <section id="skills" className="py-12 text-white md:py-16">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+                <h2 data-aos="fade-right" className="text-center text-3xl font-bold text-gray-100 sm:text-4xl md:text-5xl">Technical <span className="text-cyan-300">Expertise</span></h2>
 
-                <div className="mt-10 grid gap-8 lg:grid-cols-3">
+                <div className="mt-8 grid gap-8 md:grid-cols-2 lg:mt-10 lg:grid-cols-3">
                     {categories.map((cat, idx) => (
                         <div key={cat.title} data-aos="fade-up" data-aos-delay={idx * 80}>
                             <h3 className="mb-4 text-sm tracking-widest text-slate-300">{cat.title.toUpperCase()}</h3>
-                            <div className="grid grid-cols-3 sm:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-2 gap-3 grid-cols-3">
                                 {cat.items.map((item) => (
-                                    <div key={item.name} className="flex flex-col items-center justify-center gap-2 rounded-xl border border-white/6 bg-[#0f1724]/60 p-4 text-center text-sm text-slate-200 hover:scale-105 transform transition">
+                                    <div key={item.name} className="flex min-h-28 transform flex-col items-center justify-center gap-2 rounded-xl border border-white/6 bg-[#0f1724]/60 p-3 text-center text-sm text-slate-200 transition hover:scale-105 sm:p-4">
                                         <div className="mb-1 text-2xl text-cyan-300">{item.icon}</div>
-                                        <div className="text-xs">{item.name}</div>
+                                        <div className="max-w-full break-words text-xs leading-5">{item.name}</div>
                                     </div>
                                 ))}
                             </div>

@@ -17,13 +17,13 @@ const MobileNav = ({closeNav,showNav}:Props) => {
             <div className={`fixed inset-0 ${navOpen} transform transition-all right-0 duration-500 z-100002 bg-black opacity-70 w-full h-screen`}></div>
 
             {/* navlinks */}
-            <div className={`${navOpen} text-white fixed flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-[#0b0d24] z-100050 right-0`}>
-                <Link href="/#home" onClick={closeNav} className="mt-10 ml-10 inline-flex w-fit items-center gap-3">
+            <div className={`${navOpen} text-white fixed flex flex-col h-full transform transition-all duration-500 delay-300 w-[85%] max-w-sm bg-[#0b0d24] z-100050 right-0`}>
+                <Link href="/#home" onClick={closeNav} className="mt-10 ml-6 sm:ml-10 inline-flex w-fit items-center gap-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-400 text-[#071023]">
                         <FaCode className="h-5 w-5" />
                     </span>
                     <span className="text-xl font-bold text-sky-400 sm:text-2xl">
-                        Khushi Singh
+                        Abhishek
                     </span>
                 </Link>
 
@@ -31,7 +31,7 @@ const MobileNav = ({closeNav,showNav}:Props) => {
                 {NavLinks.map((link) => {
                     return (
                         <Link key={link.id} href={link.url} onClick={closeNav}>
-                            <p className="text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px] ">
+                            <p className="text-white w-fit text-xl ml-8 border-b-[1.5px] pb-1 border-white sm:ml-12 sm:text-[30px] ">
                                 {link.label}
                             </p>
                         </Link>
