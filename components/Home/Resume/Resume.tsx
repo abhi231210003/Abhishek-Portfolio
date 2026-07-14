@@ -17,7 +17,7 @@ const Resume = () => {
                 'Built and maintained key website modules including the Convocation and Training & Placement (T&P) portals',
             ],
             skills: ['Next.js', 'Node.js', 'MongoDB', 'JavaScript', 'REST API'],
-            certificateLink: '#',
+            certificateLink: '',
         },
         {
             id: 2,
@@ -31,7 +31,7 @@ const Resume = () => {
                 'Implemented advanced machine and deep learning models including GRU, LSTM, and CNN networks for water quality forecasting',
             ],
             skills: ['Python', 'GRU', 'LSTM', 'CNN', 'Machine Learning', 'Deep Learning'],
-            certificateLink: '#',
+            certificateLink: '/images/certificates/daviseintern1.jpeg',
         },
     ]
 

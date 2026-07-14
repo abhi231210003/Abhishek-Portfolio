@@ -49,26 +49,24 @@ const Achievements = () => {
                   <h3 className="mb-2 pr-8 text-lg font-bold leading-6 text-white md:text-xl">
                     {achievement.title}
                   </h3>
-                  <p className="mb-4 text-sm leading-7 text-slate-300 md:text-base">
-                    {achievement.description}
-                  </p>
-
-                  {/* Links */}
                   {achievement.links && achievement.links.length > 0 && (
-                    <div className="flex flex-wrap gap-3">
+                    <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                       {achievement.links.map((link, linkIdx) => (
                         <Link
                           key={linkIdx}
                           href={link.url}
                           target="_blank"
-                          className="inline-flex items-center gap-2 rounded-lg border border-cyan-400/50 px-4 py-2 text-sm font-medium text-cyan-200 transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-400/10"
+                          className="inline-flex items-center gap-1 text-xs font-semibold text-slate-200 underline underline-offset-2 transition-colors hover:text-cyan-300"
                         >
                           {link.name}
-                          <FaExternalLinkAlt className="h-3 w-3" />
+                          <FaExternalLinkAlt className="h-2.5 w-2.5" />
                         </Link>
                       ))}
                     </div>
                   )}
+                  <p className="text-sm leading-7 text-slate-300 md:text-base">
+                    {achievement.description}
+                  </p>
                 </div>
               </div>
             </div>

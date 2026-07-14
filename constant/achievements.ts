@@ -12,41 +12,34 @@ export interface Achievement {
 export const achievementsData: Achievement[] = [
   {
     id: 1,
-    image: '/images/naukri-logo.png',
+    image: '/images/logos/image.png',
     title: 'Certificate of Merit - Naukri Campus Young Turks',
-    description: 'Earned a Certificate of Merit with 95.64 percentile in Naukri Campus Young Turks 2025, followed by a global rank of 3549 in Round 2.',
+    description: 'Earned a Certificate of Merit with 97.78 percentile in Naukri Campus Young Turks 2025, followed by a global rank of 9974 in Round 2.',
     links: [
       {
         name: 'View Certificate Round 1',
-        url: '#',
+        url: '/images/certificates/naukriytr1.pdf',
       },
       {
         name: 'View Result Round 2',
-        url: '#',
+        url: '/images/certificates/naukriytr2.png',
       },
     ],
   },
   {
     id: 2,
-    image: '/images/davise-lab-logo.png',
+    image: '/images/logos/daviselogo.png',
     title: 'Certificate of Appreciation - DAViSE Lab',
     description: 'Received a Certificate of Appreciation from DAViSE Lab, NIT Delhi, serving as Student Coordinator for the SmartCodeWeb 1.0 hackathon.',
     links: [
       {
         name: 'View Certificate',
-        url: '#',
+        url: '/images/certificates/scw1.jpeg',
       },
     ],
   },
   {
     id: 3,
-    image: '/images/ic2sdt-logo.png',
-    title: 'Student Coordinator & Web Developer - IC2SDT 2025',
-    description: 'Led website development and served as Student Coordinator for the 2nd IEEE International Conference on Computer Science & Digital Technologies (IC2SDT 2025) hosted at NIT Delhi.',
-    links: [],
-  },
-  {
-    id: 4,
     image: '/images/logos/apnaclg.png',
     title: 'Certificate of Completion - Alpha (DSA with Java)',
     description: 'Successfully completed the Alpha (DSA with Java) course by Apna College, covering Data Structures and Algorithms in Java.',
@@ -57,6 +50,14 @@ export const achievementsData: Achievement[] = [
       },
     ],
   },
+  {
+    id: 4,
+    image: '/images/logos/ic2sdt.png',
+    title: 'Student Coordinator & Web Developer - IC2SDT 2025',
+    description: 'Contributed to the Web Development Team and served as Student Coordinator for the 2nd IEEE International Conference on Computer Science & Digital Technologies (IC2SDT 2025) hosted at NIT Delhi.',
+    links: [],
+  },
+  
   // {
   //   id: 2,
   //   image: '/images/naukri-logo.png',
